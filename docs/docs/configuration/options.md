@@ -431,6 +431,7 @@ cookies: {
   sessionToken: {
     name: `__Secure-next-auth.session-token`,
     options: {
+      domain: '.exampledomain.com'
       httpOnly: true,
       sameSite: 'lax',
       path: '/',
@@ -455,21 +456,21 @@ cookies: {
     }
   },
   pkceCodeVerifier: {
-    name: `${cookiePrefix}next-auth.pkce.code_verifier`,
+    name: `__Secure-next-auth.pkce.code_verifier`,
     options: {
       httpOnly: true,
       sameSite: 'lax',
       path: '/',
-      secure: useSecureCookies
+      secure: true
     }
   },
   state: {
-    name: `${cookiePrefix}next-auth.state`,
+    name: `__Secure-next-auth.state`,
     options: {
       httpOnly: true,
       sameSite: "lax",
       path: "/",
-      secure: useSecureCookies,
+      secure: true,
     },
   },
 }
